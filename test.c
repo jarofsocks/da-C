@@ -1,5 +1,5 @@
 #include <stdio.h>
 void main()
 {
-    printf("sperma");
+    printf(";L;LK;L;KL");
 }
