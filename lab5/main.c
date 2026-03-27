@@ -3,7 +3,7 @@
 #include "func.h"
 
 void main() {
-	int inp n;
+	char inp n;
 	
 	double mass1[n][n];
 	double mass2[n][n];
@@ -11,11 +11,12 @@ void main() {
 	scanf("%d", &inp)	
 	
 	switch(inp) {
-		case 0: 
-		case 1:
-		case 2:
+		case "+": plus(); break;
+		case "-": minus(); break;
+		case "*": multi(); break;
 		default: print("u did smtng wrong")
 	}
+	
 	
 	
 }

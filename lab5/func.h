@@ -6,5 +6,8 @@
 
 float plus();
 	
+float minus();
+
+float multi();
 
 #endif
