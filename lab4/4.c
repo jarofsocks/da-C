@@ -5,7 +5,10 @@
 void main(){
 		float a, b, c, p, s;
 	
-	scanf("%f %f %f", &a, &b, &c);
+	if (scanf("%f %f %f", &a, &b, &c) == False){
+		printf("stuuuuuuuupid");
+		return 0;
+	}
 	
 	check(a,b,c);
 

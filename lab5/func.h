@@ -4,10 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-float plus();
+float plus(double** mtr1, double** mtr2, int n);
 	
-float minus();
+float minus(double** mtr1, double** mtr2, int n);
 
-float multi();
+float multi(double** mtr1, double** mtr2, int n);
 
 #endif

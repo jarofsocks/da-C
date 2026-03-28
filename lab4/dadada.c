@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void check(int a, int b, int c){
+bool check(int a, int b, int c){
 	if (!((a < b + c) && (b < a + c) && (c < a + b))) {
 		printf("stuuuuuuuupid");
-		exit(0);
+		return False;
+	} else {
+		return True;
 	}
 }
 
