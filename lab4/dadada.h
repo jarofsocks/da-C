@@ -3,8 +3,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
-void check(int a, int b, int c);
+bool check(int a, int b, int c);
 
 float per(float a, float b, float c);
 

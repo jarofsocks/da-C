@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = 4.o
-LINKOBJ  = 4.o
+OBJ      = 4.o dadada.o
+LINKOBJ  = 4.o dadada.o
 LIBS     = -L"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/jarofsocks/Desktop/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib" -L"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/jarofsocks/Desktop/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/jarofsocks/Desktop/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/include" -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/jarofsocks/Desktop/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/jarofsocks/Desktop/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/jarofsocks/Desktop/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/include" -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/jarofsocks/Desktop/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/jarofsocks/Desktop/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/jarofsocks/Desktop/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -26,3 +26,6 @@ $(BIN): $(OBJ)
 
 4.o: 4.c
 	$(CC) -c 4.c -o 4.o $(CFLAGS)
+
+dadada.o: dadada.c
+	$(CC) -c dadada.c -o dadada.o $(CFLAGS)
