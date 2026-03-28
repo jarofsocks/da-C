@@ -3,9 +3,6 @@
 
 int i, j, n;
 
-
-
-
 double** plus(double** mtr1, double** mtr2, int n){
 	
 	double** mtr3 = (double**)malloc(n * sizeof(double*));
@@ -40,7 +37,7 @@ double** minus(double** mtr1, double** mtr2, int n){
 
 double** multi(double** mtr1, double** mtr2, int n){
 	
-		double** mtr3 = (double**)malloc(n * sizeof(double*));
+	double** mtr3 = (double**)malloc(n * sizeof(double*));
 	for (i = 0; i < n; i++){
 		mtr3[i] = (double*)malloc(n * sizeof(double));
 	}

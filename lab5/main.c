@@ -8,6 +8,7 @@ void main() {
 	double **mtr1;
 	double **mtr2;
 	double **mtr3;
+	
 	scanf("%d", &n);
 	
 	mtr1 = (double**)malloc(n * sizeof(double*));
@@ -29,7 +30,7 @@ void main() {
 		case 0: mtr3 = plus(mtr1, mtr2, n); break;
 		case 1: mtr3 = minus(mtr1, mtr2, n); break;
 		case 2: mtr3 = multi(mtr1, mtr2, n); break;
-		default: print("u did smtng wrong");
+		default: printf("u did smtng wrong");
 	}
 	
 	for (i = 0;i < n;i++){
@@ -38,6 +39,17 @@ void main() {
 			printf("%lf ", mtr3[i][j]);	
 		}
 	}
+	
+	for (i = 0;i < n;i++){
+		for (j = 0;j < n; j++){
+			free(mtr1[i]);
+			free(mtr2[i]);
+			free(mtr3[i]);
+		}
+	}
+	free(mtr1);
+	free(mtr2);
+	free(mtr3);
 	
 	
 }
