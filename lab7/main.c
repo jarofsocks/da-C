@@ -3,44 +3,61 @@
 #include <string.h>
 #include <math.h>
 
-typedef struct {
-        char name[79];
-        char surname[79];
-        int yrofbirth;
-} humen;
-    
-humen hlist1[4], hlist2[4];
-    
-int i, j;
-    
-int syrofbirth;
-    
-char sname[79], ssurname[79];
 
-int copy(humen *list1, humen *list2) {
-    for (i = 0; i < 4; i++) {
-        list2[i] = list1[i];
-    }
-    return 0;
-}
-
-int sort(humen *list1) {
-    humen memel;
-	for (j=0; j<4; j++) {
-	    for (i=0; i<3; i++) {
-	        if (list1[i+1].yrofbirth < list1[i].yrofbirth) {
-	            memel = list1[i];
-	            list1[i] = list1[i+1];
-	            list1[i+1] = memel;
-	        }
-	    }
-	    
-	}
-	    return 0;
-	}
 
 int main() {
-    int test = 1;
+	
+	FILE *f1;
+	
+	f1 = fopen("text.txt","r");
+	
+	int numoflines;
+	
+	char str[79];
+	
+	while (fgets(str, 79, f1) != NULL) {
+   		numoflines++;
+    	}
+
+	fclose(f1);
+	
+	
+
+	f1 = fopen("text.txt","r");
+	
+	typedef struct {
+	        char name[79];
+	        char surname[79];
+	        int yrofbirth;
+	} humen;
+	    
+	humen hlist1[numoflines], hlist2[numoflines];
+	    
+	int i, j;
+	
+	int copy(humen *list1, humen *list2) {
+	    for (i = 0; i < numoflines; i++) {
+	        list2[i] = list1[i];
+	    }
+	    return 0;
+	}
+	
+	int sort(humen *list1) {
+	    humen memel;
+		for (j=0; j<numoflines-1; j++) {
+		    for (i=0; i<numoflines-j-1; i++) {
+		        if (list1[i+1].yrofbirth < list1[i].yrofbirth) {
+		            memel = list1[i];
+		            list1[i] = list1[i+1];
+		            list1[i+1] = memel;
+		        }
+		    }
+		    
+		}
+		    return 0;
+	}
+    
+	int test = 0;
     
     if (test == 1) {
         for (i = 0; i < 4; i++) {
@@ -52,11 +69,15 @@ int main() {
             hlist1[i] = newhumen;
         }
     } else {
-        for (i = 0; i < 4; i++) {
-            scanf("%s %s %d", hlist1[i].name, hlist1[i].surname, &hlist1[i].yrofbirth);
-        }
+		i = 0;
+        while (i < numoflines) {
+        	fscanf(f1, "%s, %s, %d", &hlist1[i].name, &hlist1[i].surname, &hlist1[i].yrofbirth);
+        	printf("%s", hlist1[i].name);
+        	i++;
+        	}
+        	
+		}
         
-    }
     
     
     
@@ -66,16 +87,18 @@ int main() {
     sort(hlist2);
     
     printf("inp\n");
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < numoflines; i++) {
         printf("%s, %s, %d \n",hlist1[i].name, hlist1[i].surname, hlist1[i].yrofbirth);
     }
     
     printf("\nout\n");
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < numoflines; i++) {
         printf("%s, %s, %d \n",hlist2[i].name, hlist2[i].surname, hlist2[i].yrofbirth);
     }
     
     printf("\ndone");
+    
+    fclose(f1);
     
     return 0;
 }
