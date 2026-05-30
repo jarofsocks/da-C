@@ -27,6 +27,7 @@ char sort(int type_int, char list[length][5][79]) {
             for (i=0; i<length-j-1; i++) {
                 if (list[i+1][type_int-1] < list[i][type_int-1]) {
                     swap(list[i+1], list[i]);
+                    printf("i did smthg");
                 }
             }
 
